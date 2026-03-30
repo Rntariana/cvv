@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CVMaker</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <h1>CVMaker</h1>
+    <nav>
+      <button id="login-btn">Login</button>
+      <button id="register-btn">Register</button>
+      <button id="logout-btn">Logout</button>
+    </nav>
+    <span id="user-info"></span>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h2>Build Your Professional CV in Minutes</h2>
+    <p>Pick from 14 modern templates designed by experts.</p>
+  </section>
+
+  <!-- Premium -->
+   
+<section class="premium-section">
+   <h3>Unlock All Premium Templates</h3>
+
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank"> <!-- Identify your PayPal account -->
+       <input type="hidden" name="business" value="daisynestique.gmail.com">
+
+
+  </form>
+</section>
+
+    
+    <!-- Specify a Buy Now button -->
+    <input type="hidden" name="cmd" value="_xclick">
+    
+    <!-- Item details -->
+    <input type="hidden" name="item_name" value="Premium CV Templates">
+    <input type="hidden" name="amount" value="10.00">
+    <input type="hidden" name="currency_code" value="USD">
+    
+    <!-- Submit button -->
+    <input type="submit" value="Buy Now ($10)" class="buy-btn">
+  </form>
+</section>
+
+
+  <!-- Template Gallery -->
+  <section id="template-gallery" class="gallery">
+    <h2>Choose a Template</h2>
+    <div id="template-list" class="template-list"></div>
+  </section>
+
+  <!-- CV Preview -->
+  <section class="preview">
+    <h2>Preview</h2>
+    <div id="cv-preview" class="cv-preview"></div>
+  </section>
+
+  <button id="download-pdf">Download as PDF</button>
+
+  <!-- Upload Your Own CV Section -->
+  <section id="upload-cv" class="upload-section">
+    <h2>Upload Your Existing CV</h2>
+    <p>Already have a CV? Upload it here to showcase it on your site!</p>
+    <input type="file" id="cv-upload" accept=".pdf,.doc,.docx">
+    <div id="uploaded-cv"></div>
+  </section>
+
+  <!-- Hire Me Section -->
+  <section id="hire-me" class="hire-section">
+    <h2>Hire Me</h2>
+    <p>I design and build professional CVs and portfolio websites. Let’s work together to make your profile stand out!</p>
+    <a href="mailto:yourname@gmail.com" class="btn">📧 Contact Me</a>
+  </section>
+
+  <!-- Sell Templates / Digital Products -->
+  <section id="shop" class="shop-section">
+    <h2>Buy My Premium CV Templates</h2>
+    <p>Get access to editable resume templates and cover letters — used by 1,000+ job seekers.</p>
+    <a href="https://yourshoplink.gumroad.com/" class="btn">🛍 Visit My Shop</a>
+  </section>
+
+  <!-- Email Subscription (Lead Capture) -->
+  <section id="subscribe" class="subscribe-section">
+    <h2>Join My Newsletter</h2>
+    <p>Get free CV tips, interview tricks, and design updates weekly.</p>
+    <form id="subscribe-form">
+      <input type="email" id="subscribe-email" placeholder="Enter your email..." required>
+      <button type="submit" class="btn">Subscribe</button>
+    </form>
+  </section>
+
+  <!-- Ad Section (Google AdSense placeholder) -->
+  <section class="ads-section">
+    <h2>Sponsored</h2>
+    <!-- Replace with your actual AdSense code after approval -->
+    <div id="ads-placeholder" style="background:#f1f1f1; padding:20px; text-align:center;">
+      <p>Google Ads will appear here once your site is approved for AdSense.</p>
+    </div>
+  </section>
+
+  <!-- Edit CV Section -->
+  <section class="edit-cv">
+    <h2>Edit Your CV</h2>
+    <form id="cv-form">
+      <label>Name: <input type="text" id="cv-name" required></label><br>
+      <label>Email: <input type="email" id="cv-email" required></label><br>
+      <label>Phone: <input type="text" id="cv-phone" required></label><br>
+      <label>Profile: <textarea id="cv-profile" placeholder="Write a short summary..." required></textarea></label><br>
+
+      <h3>Experience</h3>
+      <div id="experience-section">
+        <div class="experience-entry">
+          <input type="text" placeholder="Role" class="exp-role" required>
+          <input type="text" placeholder="Company" class="exp-company" required>
+          <input type="text" placeholder="Years" class="exp-years" required>
+        </div>
+      </div>
+      <button type="button" id="add-experience-btn">Add More Experience</button><br>
+
+      <h3>Education</h3>
+      <div id="education-section">
+        <div class="education-entry">
+          <input type="text" placeholder="Degree" class="edu-degree" required>
+          <input type="text" placeholder="School" class="edu-school" required>
+          <input type="text" placeholder="Years" class="edu-years" required>
+        </div>
+      </div>
+      <button type="button" id="add-education-btn">Add More Education</button><br>
+
+      <h3>Skills</h3>
+      <div id="skills-section">
+        <input type="text" placeholder="Skill" class="cv-skill">
+      </div>
+      <button type="button" id="add-skill-btn">Add More Skill</button><br>
+
+      <h3>Languages</h3>
+      <div id="languages-section">
+        <input type="text" placeholder="Language" class="cv-language">
+      </div>
+      <button type="button" id="add-language-btn">Add More Language</button><br>
+
+      <h3>Certifications</h3>
+      <div id="certifications-section">
+        <input type="text" placeholder="Certification" class="cv-certification">
+      </div>
+      <button type="button" id="add-certification-btn">Add More Certification</button><br>
+
+      <h3>Projects</h3>
+      <div id="projects-section">
+        <div class="project-entry">
+          <input type="text" placeholder="Project Title" class="proj-title">
+          <input type="text" placeholder="Description" class="proj-desc">
+          <input type="url" placeholder="Link" class="proj-link">
+        </div>
+      </div>
+      <button type="button" id="add-project-btn">Add More Project</button><br>
+
+      <h3>Hobbies / Interests</h3>
+      <div id="hobbies-section">
+        <input type="text" placeholder="Hobby / Interest" class="cv-hobby">
+      </div>
+      <button type="button" id="add-hobby-btn">Add More Hobby</button><br>
+
+      <h3>Social Links</h3>
+      <label>LinkedIn: <input type="url" id="cv-linkedin" placeholder="https://linkedin.com/in/username"></label><br>
+      <label>GitHub: <input type="url" id="cv-github" placeholder="https://github.com/username"></label><br>
+      <label>Portfolio: <input type="url" id="cv-portfolio" placeholder="https://yourportfolio.com"></label><br>
+
+      <button type="submit">Update Preview</button>
+    </form>
+  </section>
+
+  <!-- Auth Modal -->
+  <div id="auth-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeAuthModal()">&times;</span>
+      <h2 id="auth-title"></h2>
+      <form id="auth-form" data-type="">
+        <div id="auth-body"></div>
+        <button type="submit" id="auth-submit">Continue</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script src="server.js"></script>
+  <script src="backend.js"></script>
+
+  <script>
+    // Premium logic
+    const buyBtn = document.getElementById("buy-premium-btn");
+    let hasPremiumAccess = false;
+
+    buyBtn.onclick = () => {
+      if(confirm("Pay $10 to unlock all premium templates?")) {
+        hasPremiumAccess = true;
+        alert("Premium templates unlocked!");
+        if(typeof renderTemplateGallery === "function") renderTemplateGallery();
+      }
+    };
+
+    // CV Upload logic
+    const uploadInput = document.getElementById('cv-upload');
+    const uploadedDiv = document.getElementById('uploaded-cv');
+    uploadInput?.addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if(file) {
+        const fileURL = URL.createObjectURL(file);
+        uploadedDiv.innerHTML = `<iframe src="${fileURL}" width="100%" height="600px"></iframe>`;
+      }
+    });
+
+    // Newsletter subscription
+    const form = document.getElementById("subscribe-form");
+    form?.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const email = document.getElementById("subscribe-email").value;
+      alert("Thank you for subscribing! Updates will be sent to " + email);
+      form.reset();
+    });
+  </script>
+</body>
+</html>
