@@ -12,15 +12,15 @@ This project was built as part of my learning journey in web development to impr
 
 ---
 
-## 🚀 Features
+##  Features
 
-- 🧑 Personal Information Input (Name, Contact, Email)
-- 🎓 Education Section
-- 💼 Work Experience Section
-- 🛠 Skills Section
-- 📄 Live CV Preview
-- 💾 Download/Export CV (if implemented)
-- 🎨 Clean and responsive design
+- Personal Information Input (Name, Contact, Email)
+-  Education Section
+-  Work Experience Section
+-  Skills Section
+-  Live CV Preview
+-  Download/Export CV (if implemented)
+-  Clean and responsive design
 
 ---
 
