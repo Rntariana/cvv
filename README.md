@@ -34,10 +34,15 @@ This project was built as part of my learning journey in web development to impr
 ---
 
 ##  Preview
+![Preview 1](Screenshot 2026-04-14 221805.png)
 
-(Add screenshots of your CV Maker here)
+![Preview 2](Screenshot 2026-04-14 221837.png)
 
----
+![Preview 3](Screenshot 2026-04-14 221901.png)
+
+![Preview 4](Screenshot 2026-04-14 221928.png)
+
+![Preview 5](Screenshot 2026-04-14 221938.png)
 
 ## 📁 How to Run the Project
 
